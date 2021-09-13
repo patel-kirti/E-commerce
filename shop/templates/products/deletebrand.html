@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      {% include "_messages.html" %} {% if deletebrand %}
+      <h1 class="text-center mt-5">Delete Brand</h1>
+      <div class="modal-body mr-10">
+        <span class="text-danger">Are you sure that want to delete this brand</span>
+        <h3></h3>
+        <p>Are you sure?</p>
+      </div>
+      <form action="" method="POST">
+        <input type="Submit" value="Delete" class="btn btn-sm btn-danger mt-2" />
+      </form>
+      <a href="{{url_for('brands')}}" class="btn btn-sm btn-warning" style="margin-top: -65px; margin-left: 140px">Cancle</a>
+
+      {% else %}
+      <h1 class="text-center mt-5">Delete Category</h1>
+      <div class="modal-body mr-10">
+        <span class="text-danger">Are you sure that want to delete this category</span>
+        <h3></h3>
+        <p>Are you sure?</p>
+      </div>
+      <form action="" method="POST">
+        <input type="Submit" value="Delete" class="btn btn-sm btn-danger mt-2" />
+      </form>
+      <a href="{{url_for('category')}}" class="btn btn-sm btn-warning" style="margin-top: -65px; margin-left: 140px">Cancle</a>
+
+      {% endif %}
+
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+{% endblock content %}

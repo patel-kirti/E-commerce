@@ -1,0 +1,68 @@
+<!-- navbar Start .......... -->
+<div class="container" style="background-color: cadetblue;">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">MyShop</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Products</a>
+              </li>
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Brands
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for t in brands %}
+                      <a class="dropdown-item" href="{{url_for('get_brand',id=t.id)}}">{{t.name}}</a>
+                    {% endfor %}
+                </div>
+              </li>
+    
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categories
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for t in cat %}
+                      <a class="dropdown-item" href="{{url_for('get_caregory',id=t.id)}}">{{t.name}}</a>
+                    {% endfor %}
+                </div>
+              </li>
+              
+              {% if current_user.is_authenticated %}
+              <li class="nav-item">
+                <a href="{{url_for('customer_logout')}}" class="nav-link">{{current_user.name}}</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{url_for('customer_logout')}}" class="nav-link">LogOut</a>
+              </li>
+              
+              {% else %}
+              <li class="nav-item">
+                <a href="{{url_for('customer_register')}}" class="nav-link">SignIn</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="{{url_for('customerLogin')}}" class="nav-link">LogIn</a>
+              </li>
+              {% endif %}
+              
+            </ul>
+            <form class="d-flex" action="{{url_for('result')}}">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+              <button class="btn btn-success" type="submit">Search</button>
+            </form>
+            <!-- <li class="nav-item"> -->
+              <a class="nav-link" href="{{url_for('getCart')}}" tabindex="-1"><i class="fa fa-cart-plus"style="font-size:24px;color:black">({{ session['ShopingCart']|length }})</i></a>
+            <!-- </li> -->
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- navbar End .......... -->

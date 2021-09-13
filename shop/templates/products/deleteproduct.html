@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      {% include "_messages.html" %} 
+      <h1 class="text-center mt-5">Delete Product</h1>
+      <div class="modal-body mr-10">
+        <span class="text-danger">Are you sure that want to delete this Product</span>
+        <h3></h3>
+        <p>Are you sure?</p>
+      </div>
+      <form action="" method="POST">
+        <input type="Submit" value="Delete" class="btn btn-sm btn-danger mt-2" />
+      </form>
+      <a href="{{url_for('admin')}}" class="btn btn-sm btn-warning" style="margin-top: -65px; margin-left: 140px">Cancle</a>
+
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+{% endblock content %}
