@@ -51,7 +51,7 @@
     <div class="row">
       <div class="col text-center">
         {% if brand.has_prev %}
-          <a href="{{url_for('get_brand', id=get_b.id, page=brand.prev_num)}}" class="btn btn-outline-info btn-sm mt-3">Previous</a> 
+          <a href="{{url_for('get_brand', id=get_b.id, page=brand.prev_num)}}" class="btn btn-outline-info btn-sm mt-3">P<i class="fa fa-angle-double-left" aria-hidden="true"></i></a> 
         {% endif %}
         
         {% if brand.total>8 %}          
@@ -68,7 +68,8 @@
         {% endfor %}
         {% endif %}
         {% if brand.has_next %}
-          <a href="{{url_for('get_brand', id=get_b.id, page=brand.next_num)}}" class="btn btn-outline-info btn-sm mt-3">Next</a>
+          <a href="{{url_for('get_brand', id=get_b.id, page=brand.next_num)}}" class="btn btn-outline-info btn-sm mt-3"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+          </a>
         {% endif %}
     </div>
   </div>
@@ -119,7 +120,7 @@
     <div class="row">
       <div class="col text-center">
         {% if get_pro.has_prev %}
-          <a href="{{url_for('get_caregory', id=get_cat.id, page=get_pro.prev_num)}}" class="btn btn-outline-info btn-sm mt-3">Previous</a> 
+          <a href="{{url_for('get_caregory', id=get_cat.id, page=get_pro.prev_num)}}" class="btn btn-outline-info btn-sm mt-3">Previo<i class="fa fa-angle-double-left" aria-hidden="true"></i></a> 
         {% endif %}
         {% if get_pro.total>8 %}          
         {% for page_num in get_pro.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=1) %}
@@ -135,7 +136,8 @@
         {% endfor %}
         {% endif %}
         {% if get_pro.has_next %}
-          <a href="{{url_for('get_caregory', id=get_cat.id, page=get_pro.next_num)}}" class="btn btn-outline-info btn-sm mt-3">Next</a>
+          <a href="{{url_for('get_caregory', id=get_cat.id, page=get_pro.next_num)}}" class="btn btn-outline-info btn-sm mt-3"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+          </a>
         {% endif %}
     </div>
   </div>
@@ -181,7 +183,7 @@
     <div class="row">
         <div class="col text-center">
           {% if products.has_prev %}
-            <a href="{{url_for('home',page=products.prev_num)}}" class="btn btn-outline-info btn-sm mt-3">Previous</a> 
+            <a href="{{url_for('home',page=products.prev_num)}}" class="btn btn-outline-info btn-sm mt-3"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a> 
           {% endif %}
         {% if products.total>8 %}         
           {% for page_num in products.iter_pages(left_edge=1,right_edge=1,left_current=1,right_current=1) %}
@@ -197,7 +199,8 @@
           {% endfor %}
           {% endif %}
           {% if products.has_next %}
-            <a href="{{url_for('home',page=products.next_num)}}" class="btn btn-outline-info btn-sm mt-3">Next</a>
+            <a href="{{url_for('home',page=products.next_num)}}" class="btn btn-outline-info btn-sm mt-3"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </a>
           {% endif %}
       </div>
     </div>
