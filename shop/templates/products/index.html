@@ -19,7 +19,7 @@
                         <h5 style="text-shadow: 1px 1px 2px black; color:chartreuse; transform: rotate(-15deg); position: absolute; top: 20%; left: 20%;">Discount {{b.discount}} %</h5>
                     {% endif %}
                         
-                    <h5 class="text-center">{{b.name}}</h5>
+                    <h6 class="text-center">{{b.name}}</h6>
                     <p class="text-center">Price: <i class="fa fa-inr"></i> {{b.price}}</p>
                 </div>
                 <div class="card-footer" style="background-color: darkgray;">
@@ -88,7 +88,7 @@
                         <h5 style="text-shadow: 1px 1px 2px black; color:chartreuse; transform: rotate(-15deg); position: absolute; top: 20%; left: 20%;">Discount {{cate.discount}} %</h5>
                     {% endif %}
                         
-                    <h5 class="text-center">{{cate.name}}</h5>
+                    <h6 class="text-center">{{cate.name}}</h6>
                     <p class="text-center">Price: <i class="fa fa-inr"></i> {{cate.price}}</p>
                 </div>
                 <div class="card-footer" style="background-color: darkgray;">
@@ -147,14 +147,14 @@
         {% for product in products.items  %}
         <div class="col-md-3 mt-3">
             <div class="card">
-                <img src="{{url_for('static', filename = 'images/' + product.image_1)}}" alt="{{product.name}}" class="card-img-top" height="200">
+                <img src="{{url_for('static', filename = 'images/' + product.image_1)}}" alt="{{product.name}}" class="card-img-top" height="200" width="200">
                 <div class="card-body"  style="background-color: blanchedalmond;">
                     
                     {% if product.discount>0 %}
                         <h5 style="text-shadow: 1px 1px 2px black; color:chartreuse; transform: rotate(-15deg); position: absolute; top: 20%; left: 20%;">Discount {{product.discount}} %</h5>
                     {% endif %}
                         
-                    <h5 class="text-center">{{product.name}}</h5>
+                    <h6 class="text-center">{{product.name}}</h6>
                     <p class="text-center">Price: <i class="fa fa-inr"></i> {{product.price}}</p>
                 </div>
                 <div class="card-footer" style="background-color: darkgray;">
