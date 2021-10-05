@@ -4,6 +4,8 @@ from .forms import RegistrationForm,Loginform
 from .models import User
 from shop.products.models import Addproducts,Brand,Category
 import os
+from flask_login import login_required, current_user, logout_user, login_user
+
 
 
 @app.route('/admin')
@@ -61,3 +63,7 @@ def login():
     return render_template('admin/login.html',title='Login page',form=form)
 
 
+@app.route('/admin/logout')
+def admin_logout():
+    logout_user()
+    return redirect(url_for('home'))
